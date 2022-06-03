@@ -30,9 +30,6 @@ use App\Http\Controllers\Admin\SupplierController;
 */
 Route::middleware(['auth'])->prefix('admin')->group(function(){
     Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
-    Route::get('',[DashboardController::class,'Index']);
-    Route::get('notification',[NotificationController::class,'markAsRead'])->name('mark-as-read');
-    Route::get('notification-read',[NotificationController::class,'read'])->name('read');
     Route::get('profile',[UserController::class,'profile'])->name('profile');
     Route::post('profile/{user}',[UserController::class,'updateProfile'])->name('profile.update');
     Route::put('profile/update-password/{user}',[UserController::class,'updatePassword'])->name('update-password');
@@ -50,7 +47,7 @@ Route::middleware(['auth'])->prefix('admin')->group(function(){
     Route::resource('products',ProductController::class)->except('show');
     Route::get('products/outstock',[ProductController::class,'outstock'])->name('outstock');
     Route::get('products/expired',[ProductController::class,'expired'])->name('expired');
-    Route::resource('sales',SaleController::class)->except('show');
+
     Route::get('sales/reports',[SaleController::class,'reports'])->name('sales.report');
     Route::post('sales/reports',[SaleController::class,'generateReport']);
 

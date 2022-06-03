@@ -45,9 +45,9 @@
 				<li class="submenu">
 					<a href="#"><i class="fe fe-activity"></i> <span> Sale</span> <span class="menu-arrow"></span></a>
 					<ul style="display: none;">
-						<li><a class="{{ route_is('sales.*') ? 'active' : '' }}" href="{{route('sales.index')}}">Sales</a></li>
+						<li><a class="" href="">Sales</a></li>
 						@can('create-sale')
-						<li><a class="{{ route_is('sales.create') ? 'active' : '' }}" href="{{route('sales.create')}}">Add Sale</a></li>
+						<li><a class="" href="">Add Sale</a></li>
 						@endcan
 					</ul>
 				</li>
