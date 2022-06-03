@@ -31,8 +31,7 @@ class RolesAndPermissionsSeeder extends Seeder
           'view-access-control',
           'view-role','edit-role','destroy-role','create-role',
           'view-permission','create-permission','edit-permission','destroy-permission',
-          'view-expired-products','view-outstock-products','backup-app','backup-db','view-settings',
-
+          
         ];
        $permissions = collect($arrayOfPermissionNames)->map(function ($permission) {
            return ['name' => $permission, 'guard_name' => 'web'];
